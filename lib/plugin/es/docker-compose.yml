@@ -1,0 +1,19 @@
+version: '2'
+services:
+  atweb-es:
+    image: registry.docker-cn.com/library/elasticsearch
+    container_name: atweb-es
+    restart: always
+    volumes:
+      - "DATAPATH/atweb-es:/usr/share/elasticsearch/data/:rw"
+    expose:
+      - 9200
+    network_mode: NET
+  atweb-kibana:
+    container_name: atweb-kibana
+    image: registry.docker-cn.com/library/kibana
+    environment:
+      ELASTICSEARCH_URL: http://atweb-es:9200
+    ports:
+      - 5601:5601
+    network_mode: NET

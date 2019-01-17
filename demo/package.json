@@ -1,0 +1,10 @@
+{
+	"name": "atweb-demo",
+	"version": "0.0.1",
+	"description": "atweb例子",
+	"author": "zhanglibin@atman.ai",
+	"dependencies": {
+	    "atweb": "*",
+        "onedoc": "git+https://littleweb:49729119ee63b5e3a31d95491757e53472b90a90@github.com/littleweb/onedoc.git"
+	}
+}

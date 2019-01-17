@@ -1,0 +1,34 @@
+{
+    "name": "atweb-demo2",
+    "port": "9887",
+    "desc": "atweb例子",
+    "model": {
+        "mongo": {
+            "dbname": "demo"
+        }
+    },
+    "view": {
+        "path": "/atweb/app/web",
+        "package": "fis",
+        "output": "/data/web"
+    },
+    "static": [
+        {
+            "url": "/images",
+            "path": "/data/web/images"
+        },
+        {
+            "url": "/js",
+            "path": "/data/web/js"
+        },
+        {
+            "url": "/css",
+            "path": "/data/web/css"
+        },
+        {
+            "url": "/docs",
+            "path": "/atweb/app/docs"
+        }
+    ],
+    "atweb-docs": true
+}

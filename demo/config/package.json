@@ -1,0 +1,9 @@
+{
+	"name": "atweb-config",
+	"version": "0.0.1",
+	"description": "atweb配置",
+	"author": "zhanglibin@atman.ai",
+	"option": {
+		"url": "/__config"
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "atweb",
+	"version": "0.9.1",
+	"description": "A web framework, based on hapi17",
+	"author": "zhanglibin@atman.ai",
+	"directories": {},
+	"dependencies": {
+	    "axios": "*",
+	    "dir2json": "*",
+	    "hapi": "*",
+	    "hapi-server-session": "*",
+	    "catbox-redis": "*",
+	    "inert": "*",
+	    "moment": "*",
+	    "mongoose": "*",
+	    "nunjucks": "*",
+	    "redis": "*",
+	    "h2o2": "*",
+	    "hapi-auth-basic": "*",
+	    "hapi-swagger": "*",
+	    "vision": "*",
+	    "joi": "*",
+	    "ua-parser-js": "*",
+	    "catbox-disk": "*",
+	    "fis3-ug": "*",
+	    "elasticsearch": "*",
+	    "yamljs": "*"
+	}
+}

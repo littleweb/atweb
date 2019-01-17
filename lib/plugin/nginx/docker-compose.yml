@@ -1,0 +1,11 @@
+version: '2'
+services:
+  atweb-nginx:
+    image: registry.docker-cn.com/library/nginx
+    container_name: atweb-nginx
+    restart: always
+    volumes:
+      - "DATAPATH/atweb-nginx:/etc/nginx/conf.d/"
+    ports:
+      - 80:80
+    network_mode: host

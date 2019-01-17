@@ -1,0 +1,1 @@
+require('atweb')(process.env.args);

@@ -1,0 +1,31 @@
+{
+    "port": "80",
+    "dockerPort": "9888",
+    "errerCode": {
+        "404": {
+    		"msg": "找不到页面"
+    	},
+    	"413": {
+    		"msg": "上传文件超出限制"
+    	},  	
+    	"500": {
+    		"msg": "系统错误"
+    	}
+    },
+    "tpl": [
+        "/var/www/app/demo/demo/_data"
+    ],
+    "tplLayout": "/var/www/app/demo/common/page/layout.tpl",
+    "env": {
+        "basicAuth": {
+            "username": "atweb",
+            "password": "123456"
+        },
+        "apiHost": "localhost"
+    },
+    "upload": {
+        "url": "/upload",
+        "host": "http://localhost",
+        "storage": "/data/upload"
+    }
+}

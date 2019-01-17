@@ -1,0 +1,12 @@
+version: '2'
+services:
+  atweb-mongo:
+    image: registry.docker-cn.com/library/mongo
+    container_name: atweb-mongo
+    restart: always
+    expose:
+      - 27017
+    volumes:
+      - "DATAPATH/atweb-mongo:/data:rw"
+    tty: true
+    network_mode: NET

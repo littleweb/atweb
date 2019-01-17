@@ -1,0 +1,12 @@
+version: '2'
+services:
+  atweb-redis:
+    image: registry.docker-cn.com/library/redis
+    container_name: atweb-redis
+    restart: always
+    volumes:
+      - "DATAPATH/atweb-redis:/data:rw"
+    expose:
+      - 6379
+    tty: true
+    network_mode: NET
