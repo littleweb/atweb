@@ -22,7 +22,7 @@ RUN curl --silent --location https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes build-essential
 
-apt-get install libssl-dev
+RUN apt-get install --yes libssl-dev
 
 WORKDIR /
 # 安装node依赖包
