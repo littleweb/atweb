@@ -29,9 +29,6 @@ WORKDIR /
 RUN npm i -g npm
 RUN npm i -g pm2
 RUN npm i -g fis3
-RUN npm i -g mocha
-RUN npm i -g chai
-RUN npm i -g mochawesome
 RUN npm i -g fis-parser-babel-5.x
 RUN npm i -g fis-parser-less-2.x
 RUN npm i -g fis-optimizer-html-compress
