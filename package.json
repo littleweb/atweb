@@ -6,6 +6,7 @@
 	"directories": {},
 	"dependencies": {
 	    "hapi": "18.x.x",
+	    "hapi-server-session": "*",
 	    "axios": "*",
 	    "dir2json": "*",
 	    "catbox-redis": "*",
