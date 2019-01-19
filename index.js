@@ -119,11 +119,12 @@ module.exports = (args) => {
 	})();
 
 	server.cache({
-        name      : 'diskCache',
+        cache      : 'diskCache',
         engine    : Disk,
         cachePath: '/data/hapi/cache',
         cleanEvery: 3600000,
-        partition : 'cache'
+        partition : 'cache',
+        segment : 'cache'
     });
 
   //   server.cache(
