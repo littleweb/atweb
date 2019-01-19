@@ -24,11 +24,7 @@ module.exports = (args) => {
             state: {
                 strictHeader: false,
                 clearInvalid: true
-            },
-		    cache : [
-,
-				
-		    ]
+            }
 		}
 	);
 	//全局引用HAPI
