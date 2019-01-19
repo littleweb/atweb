@@ -26,13 +26,13 @@ module.exports = (args) => {
                 clearInvalid: true
             },
 		    cache : [
-			    {
-		            name      : 'diskCache',
-		            engine    : Disk,
-		            cachePath: '/data/hapi/cache',
-		            cleanEvery: 3600000,
-		            partition : 'cache'
-			    },
+			    // {
+		     //        name      : 'diskCache',
+		     //        engine    : Disk,
+		     //        cachePath: '/data/hapi/cache',
+		     //        cleanEvery: 3600000,
+		     //        partition : 'cache'
+			    // },
 				{
 					name: 'session',
 					segment: 'session',
