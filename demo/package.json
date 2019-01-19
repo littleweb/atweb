@@ -4,7 +4,7 @@
 	"description": "atweb例子",
 	"author": "zhanglibin@atman.ai",
 	"dependencies": {
-	    "atweb": "*",
+        "atweb": "git+https://littleweb:49729119ee63b5e3a31d95491757e53472b90a90@github.com/littleweb/atweb.git",
         "onedoc": "git+https://littleweb:49729119ee63b5e3a31d95491757e53472b90a90@github.com/littleweb/onedoc.git"
 	}
 }

@@ -5,7 +5,7 @@
 	"author": "zhanglibin@atman.ai",
 	"directories": {},
 	"dependencies": {
-	    "hapi": "17.x.x",
+	    "hapi": "18.x.x",
 	    "hapi-server-session": "*",
 	    "axios": "*",
 	    "dir2json": "*",

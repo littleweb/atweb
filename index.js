@@ -26,42 +26,8 @@ module.exports = (args) => {
                 clearInvalid: true
             },
 		    cache : [
-			    // {
-		     //        name      : 'diskCache',
-		     //        engine    : Disk,
-		     //        cachePath: '/data/hapi/cache',
-		     //        cleanEvery: 3600000,
-		     //        partition : 'cache'
-			    // },
-				// {
-				// 	name: 'session',
-				// 	segment: 'session',
-				// 	engine: require('catbox-redis'),
-				// 	host: (global.CONF
-				// 		&& global.CONF.session
-				// 		&& global.CONF.session.redis
-				// 		&& global.CONF.session.redis.host) || (global.CONF.model
-				// 		&& global.CONF.model.redis
-				// 		&& global.CONF.model.redis.host) || 'atweb-redis',
-				// 	port: (global.CONF
-				// 		&& global.CONF.session
-				// 		&& global.CONF.session.redis
-				// 		&& global.CONF.session.redis.port) || (global.CONF.model
-				// 		&& global.CONF.model.redis
-				// 		&& global.CONF.model.redis.port) || '6379',					
-				// 	password: (global.CONF
-				// 		&& global.CONF.session
-				// 		&& global.CONF.session.redis
-				// 		&& global.CONF.session.redis.password) || (global.CONF.model
-				// 		&& global.CONF.model.redis
-				// 		&& global.CONF.model.redis.password) || '',					
-				// 	database: (global.CONF
-				// 		&& global.CONF.session
-				// 		&& global.CONF.session.redis
-				// 		&& global.CONF.session.redis.db) || (global.CONF.model
-				// 		&& global.CONF.model.redis
-				// 		&& global.CONF.model.redis.db) || ''
-				// }
+,
+				
 		    ]
 		}
 	);
@@ -155,4 +121,44 @@ module.exports = (args) => {
 	    console.log(`应用启动成功`);
 	    console.log(`访问地址: http://localhost:${config.port}`);
 	})();
+
+	server.cache({
+        name      : 'diskCache',
+        engine    : Disk,
+        cachePath: '/data/hapi/cache',
+        cleanEvery: 3600000,
+        partition : 'cache'
+    });
+
+  //   server.cache(
+		// {
+		// 	name: 'session',
+		// 	segment: 'session',
+		// 	engine: require('catbox-redis'),
+		// 	host: (global.CONF
+		// 		&& global.CONF.session
+		// 		&& global.CONF.session.redis
+		// 		&& global.CONF.session.redis.host) || (global.CONF.model
+		// 		&& global.CONF.model.redis
+		// 		&& global.CONF.model.redis.host) || 'atweb-redis',
+		// 	port: (global.CONF
+		// 		&& global.CONF.session
+		// 		&& global.CONF.session.redis
+		// 		&& global.CONF.session.redis.port) || (global.CONF.model
+		// 		&& global.CONF.model.redis
+		// 		&& global.CONF.model.redis.port) || '6379',					
+		// 	password: (global.CONF
+		// 		&& global.CONF.session
+		// 		&& global.CONF.session.redis
+		// 		&& global.CONF.session.redis.password) || (global.CONF.model
+		// 		&& global.CONF.model.redis
+		// 		&& global.CONF.model.redis.password) || '',					
+		// 	database: (global.CONF
+		// 		&& global.CONF.session
+		// 		&& global.CONF.session.redis
+		// 		&& global.CONF.session.redis.db) || (global.CONF.model
+		// 		&& global.CONF.model.redis
+		// 		&& global.CONF.model.redis.db) || ''
+		// }
+  //   );
 }
