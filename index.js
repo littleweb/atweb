@@ -9,10 +9,10 @@ module.exports = (args) => {
 	let dirname = args[0];
 	global.DEV = args[1] == 'dev'?true:false;
 	let _package = require(`${dirname}/package.json`);
-	let config = require(`${dirname}/config.json`);
+	let config = require(`${dirname}/config`);
 	global.CONF = config;
-	if(fs.existsSync(`${dirname}/_config.json`)){
-		global.CONF = require(`${dirname}/_config.json`);
+	if(fs.existsSync(`${dirname}/_config`)){
+		global.CONF = require(`${dirname}/_config`);
 	}
 	if(!fs.existsSync(`/data/hapi`)){
 		fs.mkdirSync(`/data/hapi`);
