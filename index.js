@@ -11,7 +11,7 @@ module.exports = (args) => {
 	let _package = require(`${dirname}/package.json`);
 	let config = require(`${dirname}/config`);
 	global.CONF = config;
-	if(fs.existsSync(`${dirname}/_config`)){
+	if(fs.existsSync(`${dirname}/_config.json`) || fs.existsSync(`${dirname}/_config.js`)){
 		global.CONF = require(`${dirname}/_config`);
 	}
 	if(!fs.existsSync(`/data/hapi`)){

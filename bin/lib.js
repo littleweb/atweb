@@ -59,7 +59,6 @@ services:
     image: registry.docker-cn.com/nicozhang/atweb
     container_name: ${config.name}
     restart: always
-    restart: always
     logging: 
       driver: "json-file"
       options: 
