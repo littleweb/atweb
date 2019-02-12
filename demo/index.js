@@ -12,7 +12,7 @@ module.exports = app => {
 	//加载模块：自定义路由
 	app.use('/', './home');
 	app.use('/mismis', './mis');
-	app.use('/onedoc', 'onedoc');
+	// app.use('/onedoc', 'onedoc');
 	//加载模块：直接加载
 	app.use('/config');
 	//加载模块：目录加载
