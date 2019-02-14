@@ -23,6 +23,9 @@
 	    "catbox-disk": "*",
 	    "fis3-ug": "*",
 	    "elasticsearch": "*",
+	    "ip2region": "*",
+	    "b64": "^4.1.2",
+	    "hoek": "^6.1.2",
 	    "yamljs": "*"
 	}
 }
