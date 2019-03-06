@@ -33,5 +33,5 @@ RUN npm i -g fis-parser-babel-5.x
 RUN npm i -g fis-parser-less-2.x
 RUN npm i -g fis-optimizer-html-compress
 RUN npm i -g fis3-ug
-RUN npm i git+https://littleweb:xtuuSSE257@github.com/littleweb/atweb.git
+RUN npm i git+https://littleweb:2f4aa77bfdf979c85366ec44edd75d5f8309d9b3@github.com/littleweb/atweb.git
 RUN npm i nodegit

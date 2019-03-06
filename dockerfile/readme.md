@@ -1,5 +1,5 @@
 ```
-sudo docker build -t nicozhang/atweb:latest .
+sudo docker build -t nicozhang/oncer:latest .
 
 sudo docker login
 
