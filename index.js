@@ -53,7 +53,6 @@ module.exports = (args) => {
 	        partition : 'cache'
 	    }
     ];
-    console.log(redis);
 	if(redis.host){
 		cache.push({
 			name: 'session',
@@ -64,6 +63,13 @@ module.exports = (args) => {
 			password: redis.password,					
 			database: redis.database
 		});
+	}else{
+		cache.push({
+	        name      : 'session',
+			segment: 'session',
+	        engine    : Disk,
+	        cachePath: '/data/hapi/cache'
+		});		
 	}
 	const server = Hapi.server(
 		{
