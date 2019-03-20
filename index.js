@@ -53,6 +53,7 @@ module.exports = (args) => {
 	        partition : 'cache'
 	    }
     ];
+    console.log(redis);
 	if(redis.host){
 		cache.push({
 			name: 'session',
