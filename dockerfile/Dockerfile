@@ -18,7 +18,7 @@ RUN apt-get install --yes git
 RUN apt-get install --yes vim
 
 #安装nodejs
-RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
+RUN curl --silent --location https://deb.nodesource.com/setup_11.x | bash -
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes build-essential
 
