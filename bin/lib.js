@@ -56,7 +56,7 @@ var lib = {
 `version: '2'
 services:
   ${config.name}:
-    image: vb6uoylk.mirror.aliyuncs.com/nicozhang/oncer
+    image: nicozhang/oncer
     container_name: ${config.name}
     restart: always
     logging: 
