@@ -1,4 +1,4 @@
-FROM registry.docker-cn.com/library/ubuntu
+FROM ubuntu
 
 #安装curl
 RUN apt-get update
@@ -18,7 +18,7 @@ RUN apt-get install --yes git
 RUN apt-get install --yes vim
 
 #安装nodejs
-RUN curl --silent --location https://deb.nodesource.com/setup_10.x | bash -
+RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes build-essential
 
