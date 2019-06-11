@@ -103,6 +103,7 @@ module.exports = (args) => {
 		//加载插件
 		cat.use('/$/redis', Path.resolve(__dirname + '/lib/plugin/redis'));
 		cat.use('/$/redis/kv', Path.resolve(__dirname + '/lib/plugin/redis/kv.js'));
+		cat.use('/$/onedoc', Path.resolve(__dirname + '/lib/plugin/onedoc'));
 		cat.use('/$/util', Path.resolve(__dirname + '/lib/plugin/util'));
 		cat.use('/$/view', Path.resolve(__dirname + '/lib/plugin/view'));
 		cat.use('/$/auth', Path.resolve(__dirname + '/lib/plugin/auth'));
