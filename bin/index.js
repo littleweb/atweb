@@ -15,7 +15,7 @@ if(args[1]){
 			lib.exec(`docker-compose -f /data/yml/${config.name}.yml stop`);
 			break;
 		case 'bash':
-			// console.log(config.name);
+			console.log(config.name);
 			break;
 	}
 }else{
