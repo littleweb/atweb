@@ -114,56 +114,60 @@ module.exports = (args) => {
 		cat.use('/$/service', Path.resolve(__dirname + '/lib/plugin/service'));
 		cat.use('/$/axios', Path.resolve(__dirname + '/lib/plugin/httpclient'));
 		
+		global.ADDAPP = (route) => {
+			if(!(route.path.indexOf("/$") > -1)){
+				route.config.handler = async function(request, h){
+					if(route.module.auth.authLogin){
+						let login = route.loginFn(request, h);
+						if(!login){
+							return h.redirect(ritem.loginUrl);
+						}
+					}
+			    	//扩展request
+					request = require('./lib/hapi/request')(request);
+			    	//扩展内容输出
+			    	h._resHtml = '';
+					h = require('./lib/hapi/h')(request, h, route);
+					//执行业务代码
+					await route.handler(request,h);
+					if(route._before){
+						let bres = await route._before(request,h);
+						h._resHtml = bres || h._resHtml;
+					}
+					return h._resHtml;
+			    };
+		        route.config.tags = route.config.tags || [];
+		        route.config.tags.push('api');
+		        route.config.pre = route.config.pre || [];
+		        route.config.pre.push({
+					'method': (request, h) => {
+						// request.session.__name = "oncer";
+			            request.data = request.data || {};
+						return h.continue;
+					}
+				});
+				if(route._before){
+			        route.config.pre.push({
+						'method': async (request, h) => {
+							request = require('./lib/hapi/request')(request);
+							let bres = await route._before(request,h);
+							return (bres || h.continue);
+						}
+					});					
+				}
+				server.route({
+				    path: route.path,
+				    method: route.method,
+				    config: route.config
+				});
+				// console.log(`${route.path} 载入成功`);
+			}
+		};
+
 		//转化成hapi路由
 		global.ATWEB.rmap.forEach(ritem => {
 			(function(route){
-				if(!(route.path.indexOf("/$") > -1)){
-					route.config.handler = async function(request, h){
-						if(route.module.auth.authLogin){
-							let login = route.loginFn(request, h);
-							if(!login){
-								return h.redirect(ritem.loginUrl);
-							}
-						}
-				    	//扩展request
-						request = require('./lib/hapi/request')(request);
-				    	//扩展内容输出
-				    	h._resHtml = '';
-						h = require('./lib/hapi/h')(request, h, route);
-						//执行业务代码
-						await route.handler(request,h);
-						if(route._before){
-							let bres = await route._before(request,h);
-							h._resHtml = bres || h._resHtml;
-						}
-						return h._resHtml;
-				    };
-			        route.config.tags = route.config.tags || [];
-			        route.config.tags.push('api');
-			        route.config.pre = route.config.pre || [];
-			        route.config.pre.push({
-						'method': (request, h) => {
-							// request.session.__name = "oncer";
-				            request.data = request.data || {};
-							return h.continue;
-						}
-					});
-					if(route._before){
-				        route.config.pre.push({
-							'method': async (request, h) => {
-								request = require('./lib/hapi/request')(request);
-								let bres = await route._before(request,h);
-								return (bres || h.continue);
-							}
-						});					
-					}
-					server.route({
-					    path: route.path,
-					    method: route.method,
-					    config: route.config
-					});
-					// console.log(`${route.path} 载入成功`);
-				}
+				global.ADDAPP(route);
 			})(ritem);
 		});
 		//启动hapi服务	
