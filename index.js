@@ -117,7 +117,7 @@ module.exports = (args) => {
 		global.ADDAPP = (route) => {
 			if(!(route.path.indexOf("/$") > -1)){
 				route.config.handler = async function(request, h){
-					if(route.module.auth.authLogin){
+					if(route.module && route.module.auth.authLogin){
 						let login = route.loginFn(request, h);
 						if(!login){
 							return h.redirect(ritem.loginUrl);
