@@ -17,9 +17,10 @@ npm i atweb -g
 ### 二、创建一个web应用
 
 ```
-const atweb = require('atweb')(__dirname);
-atweb.get('/', (req, res) => {
-    res('首页');
+module.exports = app => {
+    app.get('/', (req, res) => {
+        res('首页');
+    }
 }
 ```
 
@@ -91,14 +92,15 @@ module.exports = app => {
 ##### 加载子模块
 
 ```
-const atweb = require('atweb')(__dirname);
-atweb.get('/', (req, res) => {
-    res('首页');
+app.exports = app => {
+    app.get('/', (req, res) => {
+        res('首页');
+    }
+    //加载子模块：home
+    app.use('/home');
+    //自定义路由
+    app.use('/index', '/home');
 }
-//加载子模块：home
-atweb.use('/home');
-//自定义路由
-atweb.use('/index', '/home');
 ```
 
 
@@ -107,13 +109,15 @@ atweb.use('/index', '/home');
 > 每个子模块都是一个标准的MVC小应用
 
 ```
-const atweb = require('atweb')(__dirname);
-
-//加载子模块：home
-//写法一：路由与目录同名
-atweb.use('/home');
-//写法二：自定义路由
-atweb.use('/index', '/home');
+app.exports = app => {
+    app.get('/', (req, res) => {
+        res('首页');
+    }
+    //加载子模块：home
+    app.use('/home');
+    //自定义路由
+    app.use('/index', '/home');
+}
 ```
 
 ### 一、目录结构
