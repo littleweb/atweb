@@ -1,4 +1,4 @@
-# oncer
+# atweb
 
 > 基于hapi开发，易于扩展和高效开发的MVC业务框架。
 
@@ -8,17 +8,17 @@
 * 重业务，轻框架
   * 强化底层封装，开放更多便捷接口
 
-### 一、安装oncer
+### 一、安装atweb
 
 ```
-npm i oncer -g
+npm i atweb -g
 ```
 
 ### 二、创建一个web应用
 
 ```
-const oncer = require('oncer')(__dirname);
-oncer.get('/', (req, res) => {
+const atweb = require('atweb')(__dirname);
+atweb.get('/', (req, res) => {
     res('首页');
 }
 ```
@@ -91,14 +91,14 @@ module.exports = app => {
 ##### 加载子模块
 
 ```
-const oncer = require('oncer')(__dirname);
-oncer.get('/', (req, res) => {
+const atweb = require('atweb')(__dirname);
+atweb.get('/', (req, res) => {
     res('首页');
 }
 //加载子模块：home
-oncer.use('/home');
+atweb.use('/home');
 //自定义路由
-oncer.use('/index', '/home');
+atweb.use('/index', '/home');
 ```
 
 
@@ -107,13 +107,13 @@ oncer.use('/index', '/home');
 > 每个子模块都是一个标准的MVC小应用
 
 ```
-const oncer = require('oncer')(__dirname);
+const atweb = require('atweb')(__dirname);
 
 //加载子模块：home
 //写法一：路由与目录同名
-oncer.use('/home');
+atweb.use('/home');
 //写法二：自定义路由
-oncer.use('/index', '/home');
+atweb.use('/index', '/home');
 ```
 
 ### 一、目录结构
@@ -316,7 +316,7 @@ module.exports = app => {
 
 
 
-> oncer的模板引擎使用的是swig\|nunjucks，他的语法更接近smarty，也比较容易阅读和使用
+> atweb的模板引擎使用的是swig\|nunjucks，他的语法更接近smarty，也比较容易阅读和使用
 
 #### 引用模板
 
@@ -327,7 +327,7 @@ module.exports = app => {
             {
                 msg: '一个数据',
                 json: {
-                    name: 'oncer'
+                    name: 'atweb'
                 }
             }
         };
@@ -366,7 +366,7 @@ module.exports = app => {
 
 #### 一、mongodb
 
-> oncer默认使用mongoose做为mongodb连接器
+> atweb默认使用mongoose做为mongodb连接器
 
 ##### 1、通过配置即可使用
 
@@ -377,7 +377,7 @@ module.exports = app => {
     "datebase": {
         "mongoose": {
             "host": "mongo:27017",
-            "dbname": "oncer"
+            "dbname": "atweb"
         }
     }
 }
@@ -542,7 +542,7 @@ module.exports = app => {
     "datebase": {
         "mongoose": {
             "host": "mongo",
-            "dbname": "oncer"
+            "dbname": "atweb"
         }
     },
     "auth": {
@@ -574,12 +574,12 @@ module.exports = app => {
     "mongoose": {
         "host": "mongo",
         "auth": "root@123456",
-        "dbname": "oncer"
+        "dbname": "atweb"
     },
     "elasticsear": {
         "host": "es",
         "auth": "root@123456",
-        "index": "oncer"
+        "index": "atweb"
     }
 }
 ```
